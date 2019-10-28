@@ -31,8 +31,8 @@ include ("blocks/bd.php");  //Соединяемся с базой
 
 
 	<?php
-	$result = mysqli_query($connect, "SELECT * FROM cat ORDER BY position");
-	$myrow = mysqli_fetch_array($result); 
+	$result = $connect->query("SELECT * FROM cat ORDER BY position");
+	$myrow = $result->mysqli_fetch_array(MYSQL_ASSOC); 
 	?>
 	
 <!-- 	<div id="robot" > <img src="img/hand_logo.gif" height="180px" />  </div> -->
