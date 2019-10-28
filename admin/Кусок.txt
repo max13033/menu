@@ -1,0 +1,106 @@
+					<?php
+					do {
+					$subcatId = $myrowSubcat['id'];
+					$subcatTitle = $myrowSubcat['title'];
+					?>
+					
+					<!--
+					<div class="accordTitle border" id="<?php echo "$subcatId"  ?>"> 
+						<?php echo "$subcatTitle"  ?>
+					</div>
+			
+					 <div class="accordList">  -->
+						
+						<div class="addSortPanel"> 
+							<div class="addElem">  Добавить продукты </div>
+							<div class="sortElem"> Сортировать продукты </div>
+						</div>
+					
+					
+					<!-- таблица списка продуктов в каждой подкатегории -->
+					<table class="tableList">
+					
+						<!-- заголовок таблицы -->
+						<tr class="tHeader">
+							<td class="tNum"> № </td>
+							<td class="tTitle"> Наименование </td>
+							<td class="tDesc"> Описание </td>
+							<td class="tYield"> Выход </td>
+							<td class="tPrice"> Цена </td>
+							<td class="tBut"> Кнопка </td>
+						</tr>					
+					
+					
+						<?php
+						$resultProducts = mysql_query ("SELECT * FROM products WHERE subcat=$subcatId ORDER BY position",$db);
+						if (mysql_num_rows($resultProducts) > 0)
+						{
+							$myrowProducts = mysql_fetch_array ($resultProducts);
+						}
+						else
+						{
+						?>
+							</table>
+							</div>
+							<?php
+							continue;
+						}
+
+						$count = 0;
+						do {
+							$productId = $myrowProducts['id'];
+							$productTitle = $myrowProducts['title'];
+							$productDesc = $myrowProducts['desc'];
+							$productPrice = $myrowProducts['price'];
+							$productYield = $myrowProducts['yield'];
+							//$productOrder = $myrowProducts['zakaz'];
+							$count++;
+							?>
+			
+							<tr class="line-<?php echo "$productId";?>">
+								<td id="id-<?php echo "$productId";    ?>"   class="tCount" > <?php echo "$count"; ?> </td>
+								<td id="title-<?php echo "$productId"; ?>"   class="tTitle" > 
+									<input type="text" name="textTitle" id="textTitle-<?php echo "$productId"; ?>" class="textTitle" maxlength="80" value="<?php echo $productTitle; ?> ">
+								</td>
+								<td id="desc-<?php echo "$productId";  ?>"   class="tDesc"  > 
+									<textarea name="textDesc" id="textDesc-<?php echo "$productId"; ?>" cols="30" rows="3" maxlength="120"> <?php echo $productDesc; ?> </textarea>							
+								</td>
+								<td id="yield-<?php echo "$productId";  ?>"   class="tYield"  > 
+									<input type="text" name="textYield" id="textYield-<?php echo "$productId"; ?>" class="textYield" maxlength="20" value="<?php echo $productYield; ?> ">
+								</td>
+								<td id="price-<?php echo "$productId";  ?>"   class="tPrice"  > 
+									<input type="text" name="textPrice" id="textPrice-<?php echo "$productId"; ?>" class="textPrice" maxlength="20" value="<?php echo $productPrice; ?> ">
+								</td>
+								<td id="but-<?php echo "$productId";   ?>"   class="tBut"   > 
+									<button id="butEdit-<?php echo "$productId"; ?>" class="butEdit" > Изменить </button> 
+									<button id="butDel-<?php echo "$productId";  ?>" class="butDel" > Удалить </button> 
+								</td>
+							</tr>
+						
+						<?php
+						}
+						while ($myrowProducts = mysql_fetch_array ($resultProducts));
+						?>
+					
+					</table>  <!-- конец tableList -->
+				</div>  <!-- конец accordList -->
+
+				
+				<?php
+				}	
+				while ($myrowSubcat = mysql_fetch_array ($resultSubcat));
+				
+				}
+				while ($myrowCat = mysql_fetch_array ($resultCat));
+				?>
+			
+				</div>  <!--  конец accordion  -->
+			</div>  <!--  конец mainCol  -->
+		</div>  <!-- конец contentWrap -->
+	</div>  <!--  конец container  -->
+
+</body>
+</html>
+
+
+<? mysql_free_result($resultCat);?>

@@ -1,0 +1,424 @@
+/*
+WebInside (c) 2011
+CSS File
+
+Main CSS 
+
+*/
+
+/***********************************************************************************************
+ *  Стили общих элементов страниц
+ **********************************************************************************************/	
+*
+{
+font-family: Arial;	
+}
+html, body
+{
+padding: 0;
+margin: 0;
+background: #FFF;	
+}
+
+h1
+{
+padding-top: 0;
+margin: 0;
+color: #3F3F3F;	
+}
+
+a
+{
+color: #004080;	
+font-size: 16px;
+}
+
+hr {
+	margin-top: 2px;
+}
+
+.border
+{
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 10px;	
+}
+
+button
+{
+color: #555;
+padding: 10px;
+font: bold 20px Arial;
+height: 70px;
+-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);	
+}
+
+#wrapper
+{
+width: 100%;
+//border-left: 5px solid #999; 
+//border-right: 5px solid #999;
+padding: 20px;
+background: #F0F0F0;
+margin: 0 auto;
+position: relative;
+overflow: hidden;
+}
+
+
+
+/***********************************************************************************************
+ *  Стили главной страницы	
+ **********************************************************************************************/	
+#vitrine
+{
+margin-left: 120px;
+margin-top: 5px;
+padding: 0px 50px 50px 50px;	
+//border: 1px solid red;
+background: #FFF;
+float: left;
+width: 65%;
+}
+
+#mainZagol {
+	margin-top: 10px;
+	margin-left: 100px;
+	margin-bottom: -5px;
+	//text-align: center;
+}
+
+#secondZagol {
+	margin-top: 10px;
+	margin-left: 270px;
+	//margin-bottom: -5px;
+	//text-align: center;
+}
+
+.clear {
+	clear: both;	
+}
+
+.item
+{
+float: left;
+background: #F0F0F0;
+padding: 10px 10px 0px 10px;
+margin: 10px;
+border: 1px solid #888;
+-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+}
+
+img .item_img
+{
+border: 5px solid #999;	
+}
+
+.item  p 
+{
+font: bold 20px Arial;
+text-align: center;
+}
+
+
+
+.loupe
+{
+border: 1px solid #000;	
+}
+
+blockquote p, pre {
+    background: none repeat scroll 0 0 #F4F4FF;
+    border: 1px solid #999999;
+    padding: 6px;
+}
+#simpoll_button_44f6e4f3
+{
+background: #2DCC04;
+padding: 5px;	
+}
+
+
+#robot {
+position: absolute;
+left: 0;
+top: 12px;
+z-index: 1000;
+}
+
+
+
+#robofood {
+	padding: 10px;
+	margin-left: 170px;
+	margin-top: 20px;
+	background: #F0F0F0;
+	width: 500px;
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);	
+}
+
+
+
+/***********************************************************************************************
+ *  ?????????????????????????
+ **********************************************************************************************/
+.subcatTitle
+{
+display: block; 
+cursor: pointer; 
+position: relative; 
+margin-top: 2px; 
+padding: .5em .5em .5em .7em; zoom: 1;
+width: 600px;
+background: #F0F0F0;
+font: bold 18px Arial;
+margin: 10px 0px;
+//color: lightgreen;
+
+-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+}
+
+#subTable
+{
+//background: pink;
+font-size: 18px;
+margin-bottom: 25px;
+margin-left: 25px;
+
+}
+
+
+#subTable td 
+{
+padding: 5px;
+border-right: 2px solid #999;
+
+
+}
+
+#subTable tr
+{
+margin: 20px;
+}
+
+
+#subTable td:nth-child(1) { width: 250px; }		/*NAME*/
+#subTable td:nth-child(2) { width: 100px; text-align: center;	}		/*PRICE*/
+#subTable td:nth-child(3) { width: 70px; text-align: center;	}		/*NUM*/
+//#subTable td:nth-child(5) { width: 70px; }		/*SUM*/
+
+
+.productList
+{
+font: bold 18px Arial;
+margin-bottom: 20px;
+font-weight: bold;
+}
+
+.desc
+{
+font: normal 14px Verdana;
+margin: 0px;
+padding: 0px
+}
+
+
+
+/***********************************************************************************************
+ *  Стили основных контейнеров страниц
+ **********************************************************************************************/
+
+/* главный контейнер */
+#contentWrap {
+	float:left;
+	//border:blue 1px solid;
+	margin-left: 0px;
+	margin-top: 0px;
+	background: #FFF;
+}
+
+
+/* левая панель навигации  */
+/*
+#sidebar {
+	float: left;
+	width: 200px;
+	background: lightGreen;
+	padding-top: 0em;
+	border: 2px solid red;
+	padding-left: 50px;
+	//padding-bottom: 3500px;
+}
+*/
+#leftBar {
+	float: left;
+	width: 180px;
+	//background: lightGreen;
+	padding-top: 0em;
+	//border: 2px solid red;
+	padding-left: 50px;
+	//padding-bottom: 3500px;
+	margin-right: 20px;
+	box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+#leftNav {
+	list-style-type: none;
+	margin-left: -80px;
+	//border: 2px solid yellow;
+	
+}
+
+#leftNav  ul{
+list-style-type: none;
+list-style-position: inside;
+
+}
+
+#leftNav li{
+	list-style-position: inside;
+	display: block; 
+	cursor: pointer; 
+	position: relative; 
+	margin-top: 2px; 
+	padding: .5em .5em .5em .7em; zoom: 1;
+	width: 160px;
+	background: #F0F0F0;
+	font: bold 18px Arial;
+	margin: 10px 0px;
+	//color: lightgreen;
+
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         2px 2px 3px 0px rgba(50, 50, 50, 0.75);
+}
+
+/* главная колонка   */
+#mainCol {
+	//float: left;
+	//width: 800px;
+	//background: lightBlue;
+	padding: 0 20px 20px 10px;
+	//margin-left: 50px;
+	//border: 2px solid orange;
+	overflow: hidden;
+}
+
+/* правая колонка   */
+#rightBar {
+	//border: 2px solid green;
+	float: right;
+	//width: 100px;
+	padding: 0 10px 0 10px;
+	overflow: hidden;
+	
+}
+
+
+.activeMenu {
+	box-shadow:         -2px -2px 3px 0px rgba(50, 50, 50, 0.75);
+}
+
+.DDD {
+	background: #666
+}
+
+
+/***********************************************************************************************
+ *  Стили всех основных таблиц
+ **********************************************************************************************/
+/*
+.tableTitle {
+	margin-left: 30px;
+	margin-top: 0px;
+	//border: 2px dashed grey;
+	background: white;
+	font-size: 16px;
+}
+
+.tableTitle tr { text-align: center}
+
+.tableTitle td {
+	background: Grey;
+	padding: 12px;
+	color: white;
+}
+*/
+.tableList {
+box-shadow:         10px 10px 15px 0px rgba(50, 50, 50, 0.75);
+}
+
+/* шапка таблицы   */
+.tableList .tHeader  td{
+	background: DimGrey;
+	color: White;
+	font-weight: bold;
+	text-align: center
+}
+
+/* основная часть таблицы  */
+.tableList{
+	//margin-left: 30px;
+	margin-bottom: 55px;
+	//border: 2px dashed grey;
+	background: white;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.tableList td {
+	background: #F0F0F0;
+	padding: 12px;
+}
+
+
+/* колонки таблицы   */
+.tNum    { width: 18px  }
+.tTitle  { width: 200px }
+.tDesc   { width: 350px }
+.tYield  { width: 50px }
+.tPrice  { width: 70px; text-align: center; }
+.tCount  { width: 18px  }
+.tBut    { width: 100px }
+.tPic    { width: 50px  }
+.tOrder  { width: 100px }
+
+.tBut button {
+width: 90px;
+margin-right: 10px;
+padding: 5px;
+color: #777;
+font: bold 14px Arial;
+-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);	
+}
+
+
+/* текстовые поля внутри таблицы   */
+.tableList input, .tableList textarea {
+	font-size: 16px;
+}
+
+.textTitle {
+	width: 150px;
+	margin: 0;
+}
+
+.textDesc {
+	width: 480px;
+	margin: 0;
+}
+
+.textYield, .textPrice {
+	width: 100px;
+	margin: 0;
+}

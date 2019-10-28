@@ -1,0 +1,20 @@
+
+	
+	<div class="bsk">
+		
+		
+		<a href="#" onclick="cart.clearBasket()" style="float: right; ">Очистить</a>
+		<span id="basketwidjet" onclick="cart.showWinow('bcontainer', 1)"> Мой заказ </span>
+		
+		
+		<!-- <div id="schet" class="border">  -->
+			<div id="schetList"> </div>  
+			<div id="schetTotal">  </div> 
+			<div id="schetSum"> </div> 
+		<!-- </div>  -->
+			
+			
+			<button> Заказать </button>
+		
+	</div>
+

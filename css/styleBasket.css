@@ -1,0 +1,115 @@
+﻿/*
+WebInside (c) 2011
+CSS File
+
+Main CSS 
+
+*/
+
+#bskwrap {
+	float: right;
+	width: 25%;
+	margin: 0;
+	padding: 0;
+}
+
+/* Корзина-виджет */
+.bsk
+{
+border: 1px solid #999;
+background: LightYellow;
+/*background: #F0F0F0;*/
+float: right;	
+padding: 20px;
+width: 320px;
+//position: static;
+//right: 2%;
+//top: 20px;
+//border: 3px solid green;
+margin-top: 0;
+margin-right: 20px;
+overflow: hidden;
+
+
+-webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+
+#bskWidjet {
+	font: bold 22px Arial; 
+	cursor: pointer;
+	//margin-left: 10px;
+}
+
+.bsk hr {
+	//margin-bottom: 60px;
+}
+
+
+
+/* div всех выбранных товаров */
+#bskList{
+	padding: 5px 0;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+/* надпись "Итого" */
+#bskTotal {
+	//text-align: left;
+	float: left;
+	font-weight: bold;
+}
+
+/* общая сумма заказа */
+#bskSum {
+	//text-align: right;
+	float: right;
+	//margin-right: 0px;
+	font-weight: bold;
+}
+
+/* кнопка подтверждения /редактирования заказа  */
+#bskButClear {
+	margin-top: 20px;
+	float: left;
+	height: 70px;
+	display: none;
+}
+
+#bskButConfirm {
+	margin-top: 20px;
+	float: right;
+	height: 70px;
+	display: none;
+}
+
+
+
+
+/* наименование каждого товара */
+.bskTitle {  
+	float: left;
+	margin: 0;
+}
+
+/* цена каждого товара */
+.bskPrice {
+	margin-left: 200px;
+	font-weight: bold;
+	margin-bottom: 0;
+	text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+

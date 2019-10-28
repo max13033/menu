@@ -1,0 +1,249 @@
+/*
+CSS File
+
+Стиль админки
+
+*/
+
+
+
+
+
+
+.accordTitle
+{
+display: block; 
+cursor: pointer; 
+position: relative; 
+//margin-top: 2px; 
+padding: .5em .5em .5em .7em; zoom: 1;
+width: 680px;
+background: #F0F0F0;
+font: bold 18px Arial;
+margin: 10px 0px;
+margin-left: 20px;
+//color: lightgreen;
+
+-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+}
+
+.accordList {
+	margin-left: 40px;
+}
+
+.addSortPanel {
+	padding: 5px 0 30px 10px;
+	font-size: 18px;
+	font-weight: normal;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.addElem {
+	float: left;
+	text-decoration: underline;
+	margin-right: 
+}
+
+.sortElem {
+	float: right;
+	text-decoration: underline;
+	margin-right: 
+}
+
+
+/*  всплывающее окно при добавлении элемента  */
+.fcontainer
+{
+position: fixed;
+width: 800px;
+height: 400px;
+background: #fff;
+border: 8px solid #999;	
+padding: 20px;
+display: none;
+z-index: 1002;
+}
+
+.fcontainer table
+{
+width: 100%;	
+}
+
+#fclose
+{
+float: right;	
+}
+
+.fbutton
+{
+color: #666;
+-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);	
+padding: 5px;
+font: bold 16px Arial;	
+float: right;
+}
+
+#fcaption
+{
+background: #C0C0C0;
+
+}
+#fcaption td
+{
+border-right: 2px solid #999;
+font-weight: bold;
+text-align: center;	
+}
+/*
+#fcaption td {padding: 5px;}
+#fcaption td:nth-child(1) { width: 200px; }		/*ID
+#fcaption td:nth-child(2) { width: 200px; }		/*NAME
+#fcaption td:nth-child(3) { width: 200px; }		/*PRICE*
+#fcaption td:nth-child(4) { width: 70px; }		/*NUM
+#fcaption td:nth-child(5) { width: 70px; }		/*SUM*
+*/
+#ftable td  {
+	background: #F0F0F0;
+	//padding: 10px;
+}
+
+
+#fcaption .tPic,  #ftable .tPic {
+	//background: red;
+	width: 200px;
+	padding: 10px;
+}
+
+#ftable .textImg {
+	float: left;
+	width: 270px;
+	margin-right: -100px;
+	padding: 0px;
+	//background: pink;
+	//border: 2px solid blue;
+}
+
+#fcaption .tTitle,  #ftable .tTitle {
+	width: 350px;
+	padding: 10px;
+	//background: red;
+}
+
+#ftable .textTitle {
+	float: right;
+	width: 430px;
+	margin-left: -150px;
+	padding: 0px;
+	//background: pink;
+	//border: 2px solid blue;
+}
+
+#fcaption .tTitleProd, #ftable .tTitleProd {
+	width: 260px;
+	//background: pink;
+}
+
+#fcaption .tDescProd, #ftable .tDescProd {
+	width: 280px;
+	//background: pink;
+}
+
+
+#products  #ftable .textDesc {
+	width: 230px;
+}
+ 
+#fcaption .tYield,  #ftable .tYield {
+	width: 80px;
+	padding: 10px;
+	//background: red;
+}
+
+#ftable .textYield {
+	width: 85px;
+
+}
+
+
+.butEdit, .butDel, .butComleteZakaz, .butCancelZakaz {
+	height: 40px;
+	margin: 5px;
+	font: bold 14px Arial;
+}
+
+.butZakaz {
+	margin-top: -50px;
+	margin-bottom: 50px;
+}
+
+/* место под таблицу */  
+#foverflw {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 250px;
+}
+
+.pstrnav {
+	padding: 0px 10px 20px 15px;
+	color:#424242;
+}
+
+.pstrnav a{
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif; font-size:14px;color:#000; text-decoration:underline;
+}
+
+
+/* шапка таблицы   */
+.archive .tableList .tHeader  td{
+	background: #66CDAA;   /* MediumAquamarine */
+	color: #000;
+	font-weight: bold;
+	text-align: center
+}
+
+.archive .tableList td {
+	background: #AFEEEE
+}
+
+.tPrice  { width: 70px; text-align: center; font-weight: bold}
+.archive .tCount  { width: 18px; text-align: center; font-weight: normal  }
+.tSum {text-align: center; font-weight: bold;}
+.archive .tNum  { font-weight: bold  }
+
+
+
+
+/*  блок удаления заказов из архива  */
+
+
+#archDel {
+	//border: 1px solid black;
+	padding-bottom: 10px;
+	//height: 200px;
+	overflow: hidden;
+	
+}
+
+#calendars, #butDelArch {
+	display: none;
+}
+
+#archDel #butDelArch {
+	float: right;
+}
+
+
+.childArchDel {
+	float: left;
+	margin-right: 20px;
+}
+
+.dateField {
+	width: 70px;
+}
+
