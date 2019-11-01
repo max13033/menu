@@ -397,27 +397,6 @@ list-style-position: inside;
 	background: #666
 }
 
-
-/***********************************************************************************************
- *  Стили всех основных таблиц
- **********************************************************************************************/
-/*
-.tableTitle {
-	margin-left: 30px;
-	margin-top: 0px;
-	//border: 2px dashed grey;
-	background: white;
-	font-size: 16px;
-}
-
-.tableTitle tr { text-align: center}
-
-.tableTitle td {
-	background: Grey;
-	padding: 12px;
-	color: white;
-}
-*/
 .tableList {
 border: 2px solid #999;
 box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
@@ -496,14 +475,14 @@ box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
 
 #cont{
 	position: absolute;
-	height: 500px;
 	min-width: 500px;
 	left: 30px;
 	right: 420px;
-	background-color: #dff;
+/*	background-color: #dff;*/
 }
 .category{
 	display: grid;
+	background-color: #f0ffff;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 4fr;
 	grid-gap: 1vw;
@@ -513,15 +492,28 @@ box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
 	text-align: center;
 }
 .cattitle{
-	background-color: #ffd;
+	/*background-color: #ffd;*/
 	grid-area: title;
+	font-size: 30pt;
+	font-weight: bold;
+	padding-top: 15px;
 }
 .product{
-	background-color: #ddf;
+	/*background-color: #ddf;*/
 	text-align: center;
-
+	font-weight: bold;
+	font-size: 16pt;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 1px #99f;
+	background-color: #fff;
 }
 .product img{
 	max-height: 200px;
 	max-width: 100%;
+	border-radius: 10px;
 }
+.product p{
+	margin: 10px;
+}
+
+

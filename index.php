@@ -48,19 +48,28 @@ include ("blocks/basketWidget.php");
 
 
 		<div class = "category">
-			<div class = "cattitle"><?=$catName?></div>
+			<div class = "cattitle"> <?=$catName?></div>
 <?
 			$res = $connect->query("SELECT * FROM products WHERE `subcat` = '$catId' ORDER BY `position` ");
 			$num_prod = $res->num_rows;
 
 			for($j = 1; $j <= $num_prod; $j++){
 				$prod = $res->fetch_array(MYSQLI_ASSOC);
-
+				$productId = $prod['id'];
+				$productTitle = $prod['title'];
+				$productYield = $prod['yield'];
+				$productPrice = $prod['price'];
 ?>
-			<div class = "product">
-				<img src = "img/subcat/<?=$prod['id']?>.jpg">
-				<p><?=$prod['title']?></p>
-				<p>Цена: <?=$prod['price'] ?>&nbsp; р. / вес <?=$prod['yield']?></p>
+			<div class = "product" onclick="cart.addToCart(this, 
+														'<?php echo "$productId"; ?>', 
+														'<?php echo "$productTitle"; ?>',
+														'<?php echo "$productYield"; ?>',
+														'<?php echo "$productPrice"; ?>')">
+				<img src = "img/subcat/<?=$productId?>.jpg">
+				<div>
+					<p><?=$prod['title']?>&nbsp;<?=$prod['desc']?></p>
+					<p>Цена: <?=$prod['price'] ?>р/<wbr><?=$prod['yield']?>гр.</p>
+				</div>		
 
 
 
@@ -68,60 +77,13 @@ include ("blocks/basketWidget.php");
 			</div>
 <?			}		?>
 
-			<div class = "product"><img src = "img/subcat/30.jpg"></div>
-			<div class = "product"><img src = "img/subcat/31.jpg"></div>
-			<div class = "product"><img src = "img/subcat/54.jpg"></div>
-
-		</div>	<br>
+		</div>	<br><br>
 <?	}	?>
 
 
 
-
+		<br><br><br>
 	</div>  <!--   cont    -->	
-
-
-
-
-
-
-
-
-
-
-			
-
-			<div id="mainColTwo" >	
-				<!--
-				<h2 id="mainZagol">Меню<h2>
-				-->
-				<?php
-				// вывод категорий
-				do {
-
-					?>
-					
-					<div class="item border">
-						<a href="Page1.php?catId= <?php echo "$catId"; ?> " class="item_img">  
-							<?php echo "<img src={$imgPath} height='230px'>";	?>		
-						</a>
-			
-						<p> <?php echo "$catName"; ?>  </p>
-					</div>
-					
-				<?php
-				}	
-				while ($myrow = mysqli_fetch_array($result));
-				?>
-	
-	
-				
-				<!--
-				<div class="clear"></div>
-				-->
-			</div>  <!--  конец mainColTwo  -->
-		</div>    <!-- конец contentWrapTwo  -->
-	</div>   <!-- конец wrapperTwoCol  -->
 
 </body>
 
