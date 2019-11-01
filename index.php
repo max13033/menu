@@ -44,20 +44,33 @@ include ("blocks/basketWidget.php");
 		$catId = $myrow['id'];
 		$catName = $myrow['title'];
 		$imgPath = $myrow['img'];
-	}
 
 ?>
 
 
 		<div class = "category">
-			<div class = "cattitle">Категория</div>
+			<div class = "cattitle"><?=$catName?></div>
+<?
+			// $res = $connect->query("SELECT * FROM")
 
-			<div class = "product">1</div>
-			<div class = "product">2</div>
-			<div class = "product">3</div>
-			<div class = "product">4</div>
+?>
+			<div class = "product">
+				<img src = "img/subcat/49.jpg">
+				<p>Description</p>
+				<p>Цена /вес</p>
 
-		</div>
+
+
+
+			</div>
+
+
+			<div class = "product"><img src = "img/subcat/30.jpg"></div>
+			<div class = "product"><img src = "img/subcat/31.jpg"></div>
+			<div class = "product"><img src = "img/subcat/54.jpg"></div>
+
+		</div>	<br>
+<?	}	?>
 
 
 
