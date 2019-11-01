@@ -1,49 +1,114 @@
-<!DOCTYPE html>
+﻿<?php 
+header("Content-Type: text/html; charset=utf-8"); //устанавливаем кодировку страницы
+include ("blocks/bd.php");  //Соединяемся с базой
+?>
+
+<!DOCTYPE HTML>
 <html>
 <head>
-<style>
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  width: 190px;    /*  ширина кнопки  */
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 42px;        /* размер шрифта */
-  margin: 4px 2px;
-  cursor: pointer;
-}
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="<?php echo $myrow['meta_d']; ?> ">
+	<meta name="keywords" content="<?php echo $myrow['meta_k']; ?> ">
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<title> Меню </title>
 
-.button4 {border-radius: 12px;}
+	<link href="css/style.css"  type="text/css" rel="stylesheet">
+	<link href="css/wicart.css" type="text/css" rel="stylesheet">
+	<link href="css/styleBasket.css"  type="text/css" rel="stylesheet">
 
-</style>
+	<script type="text/javascript" src="js/jquery.js">   </script>
+	<script type="text/javascript" src="js/wicart.js">   </script>
+	<script type="text/javascript" src="js/main.js"  >   </script>
 </head>
+
 <body>
 
-<h1><center>Кулинария<center></h1>
-<h2 style="color:blue;"><center>MENU / МЕНЮ <center></h2>
-<h1><center><i>Пожалуйста выберите свободный стол</i><center></h1>
-<br>
-<br>
-<div style="text-align: center;">
-<form>
+<?php
+	$result = $connect->query("SELECT * FROM cat ORDER BY position");
+	$num_cat = $result->num_rows;
 
-	<button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "1" class="button button4">1 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "2" class="button button4">2 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "3" class="button button4">3 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "4" class="button button4">4 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "5" class="button button4">5 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "6" class="button button4">6 стол</button>  <br>
-  <button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "7" class="button button4">7 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "8" class="button button4">8 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "9" class="button button4">9 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "10" class="button button4">10 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "11" class="button button4">11 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="mainpage.php" value = "12" class="button button4">12 стол</button>
+?>
+	
+	<div id="robofood" class="border" >
+		<h1>Кулинария</h1>
+	</div>
 
-</form>
-</div>
+	<div id = "cont">
+<?php 
+include ("blocks/basketWidget.php");  
+
+	for($i=1;$i<=$num_cat; $i++){
+		$myrow = $result->fetch_array(MYSQLI_ASSOC); 
+		
+		$catId = $myrow['id'];
+		$catName = $myrow['title'];
+		$imgPath = $myrow['img'];
+	}
+
+?>
+
+
+		<div class = "category">
+			<div class = "cattitle">Категория</div>
+
+			<div class = "product">1</div>
+			<div class = "product">2</div>
+			<div class = "product">3</div>
+			<div class = "product">4</div>
+
+		</div>
+
+
+
+
+	</div>  <!--   cont    -->	
+
+
+
+
+
+
+
+
+
+
+			
+
+			<div id="mainColTwo" >	
+				<!--
+				<h2 id="mainZagol">Меню<h2>
+				-->
+				<?php
+				// вывод категорий
+				do {
+
+					?>
+					
+					<div class="item border">
+						<a href="Page1.php?catId= <?php echo "$catId"; ?> " class="item_img">  
+							<?php echo "<img src={$imgPath} height='230px'>";	?>		
+						</a>
+			
+						<p> <?php echo "$catName"; ?>  </p>
+					</div>
+					
+				<?php
+				}	
+				while ($myrow = mysqli_fetch_array($result));
+				?>
+	
+	
+				
+				<!--
+				<div class="clear"></div>
+				-->
+			</div>  <!--  конец mainColTwo  -->
+		</div>    <!-- конец contentWrapTwo  -->
+	</div>   <!-- конец wrapperTwoCol  -->
+
 </body>
+
 </html>
+
+<?php mysqli_free_result($result);?>

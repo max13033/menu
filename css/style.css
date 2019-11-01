@@ -277,32 +277,6 @@ padding: 0px
 	width: 99%;
 }
 
-/* левая панель навигации  */
-/*
-#sidebar {
-	float: left;
-	width: 200px;
-	background: lightGreen;
-	padding-top: 0em;
-	border: 2px solid red;
-	padding-left: 50px;
-	//padding-bottom: 3500px;
-}
-*/
-
-
-#leftBar {
-	float: left;
-	width: 160px;
-	//background: lightGreen;
-	padding-top: 0em;
-	//border: 2px solid red;
-	padding-left: 50px;
-	//padding-bottom: 3500px;
-	margin-left: 10px;
-	/*box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);*/
-}
-
 #leftNav {
 	list-style-type: none;
 	margin-left: -80px;
@@ -379,11 +353,11 @@ list-style-position: inside;
 
 /* правая колонка   */
 #rightBar {
-	//border: 2px solid green;
+	/*border: 2px solid green;*/
 	float: right;
 	width: 320px;
 	padding: 0;
-	//overflow: hidden;
+	/* overflow: hidden; */
 	margin-right: 10px;
 	
 }
@@ -490,3 +464,46 @@ box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
 	width: 100px;
 	margin: 0;
 }
+
+/*  =================     От Максима      =====================   */
+
+#cont{
+	position: absolute;
+	height: 500px;
+	min-width: 500px;
+	left: 30px;
+	right: 420px;
+	background-color: #dff;
+}
+.category{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 1vw;
+	grid-template-areas: 
+	"title title title title"
+	"product product product product";
+	text-align: center;
+}
+.cattitle{
+	background-color: #ffd;
+	grid-area: title;
+}
+.product{
+	background-color: #ddf;
+	text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
