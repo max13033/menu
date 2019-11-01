@@ -25,7 +25,7 @@ include ("blocks/bd.php");  //Соединяемся с базой
 <body>
 
 <?php
-	$result = $connect->query("SELECT * FROM cat ORDER BY position");
+	$result = $connect->query("SELECT * FROM subcat ORDER BY position");
 	$num_cat = $result->num_rows;
 
 ?>
@@ -43,7 +43,6 @@ include ("blocks/basketWidget.php");
 		
 		$catId = $myrow['id'];
 		$catName = $myrow['title'];
-		$imgPath = $myrow['img'];
 
 ?>
 
@@ -51,19 +50,23 @@ include ("blocks/basketWidget.php");
 		<div class = "category">
 			<div class = "cattitle"><?=$catName?></div>
 <?
-			// $res = $connect->query("SELECT * FROM")
+			$res = $connect->query("SELECT * FROM products WHERE `subcat` = '$catId' ORDER BY `position` ");
+			$num_prod = $res->num_rows;
+
+			for($j = 1; $j <= $num_prod; $j++){
+				$prod = $res->fetch_array(MYSQLI_ASSOC);
 
 ?>
 			<div class = "product">
-				<img src = "img/subcat/49.jpg">
-				<p>Description</p>
-				<p>Цена /вес</p>
+				<img src = "img/subcat/<?=$prod['id']?>.jpg">
+				<p><?=$prod['title']?></p>
+				<p>Цена: <?=$prod['price'] ?>&nbsp; р. / вес <?=$prod['yield']?></p>
 
 
 
 
 			</div>
-
+<?			}		?>
 
 			<div class = "product"><img src = "img/subcat/30.jpg"></div>
 			<div class = "product"><img src = "img/subcat/31.jpg"></div>

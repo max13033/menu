@@ -14,7 +14,6 @@ else
 	$myrow = mysqli_fetch_array ($result);
 	$subcatId = $myrow['id'];
 	$subcatTitle = $myrow['title'];
-
 }
 ?>
 

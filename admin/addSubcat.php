@@ -9,7 +9,7 @@
 
 
 	$result = mysqli_query ($connect, "SELECT * FROM subcat ORDER BY `position` DESC LIMIT 1");
-	$temp = mysqlш_fetch_array($result);
+	$temp = $result->fetch_array(MYSQLI_ASSOC);
 	$pos = $temp['position'];
 
 	// увеличиваем position для добавляемой подкатегории

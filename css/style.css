@@ -277,6 +277,32 @@ padding: 0px
 	width: 99%;
 }
 
+/* левая панель навигации  */
+/*
+#sidebar {
+	float: left;
+	width: 200px;
+	background: lightGreen;
+	padding-top: 0em;
+	border: 2px solid red;
+	padding-left: 50px;
+	//padding-bottom: 3500px;
+}
+*/
+
+
+#leftBar {
+	float: left;
+	width: 160px;
+	//background: lightGreen;
+	padding-top: 0em;
+	//border: 2px solid red;
+	padding-left: 50px;
+	//padding-bottom: 3500px;
+	margin-left: 10px;
+	/*box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);*/
+}
+
 #leftNav {
 	list-style-type: none;
 	margin-left: -80px;
@@ -353,11 +379,11 @@ list-style-position: inside;
 
 /* правая колонка   */
 #rightBar {
-	/*border: 2px solid green;*/
+	//border: 2px solid green;
 	float: right;
 	width: 320px;
 	padding: 0;
-	/* overflow: hidden; */
+	//overflow: hidden;
 	margin-right: 10px;
 	
 }
@@ -467,6 +493,7 @@ box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
 
 /*  =================     От Максима      =====================   */
 
+
 #cont{
 	position: absolute;
 	height: 500px;
@@ -498,15 +525,3 @@ box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
 	max-height: 200px;
 	max-width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
