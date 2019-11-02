@@ -1,14 +1,15 @@
 ﻿<?php 
 header("Content-Type: text/html; charset=utf-8"); //устанавливаем кодировку страницы
 include ("blocks/bd.php");  //Соединяемся с базой
+error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="description" content="<?php echo $myrow['meta_d']; ?> ">
-	<meta name="keywords" content="<?php echo $myrow['meta_k']; ?> ">
+<!-- 	<meta name="description" content="<?php echo $myrow['meta_d']; ?> ">
+	<meta name="keywords" content="<?php echo $myrow['meta_k']; ?> "> -->
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	<title> Меню </title>
@@ -44,12 +45,11 @@ include ("blocks/basketWidget.php");
 		$catId = $myrow['id'];
 		$catName = $myrow['title'];
 
-?>
 
 
-		<div class = "category">
-			<div class = "cattitle"> <?=$catName?></div>
-<?
+
+		echo '<div class = "category">	<div class = "cattitle">'.$catName.'</div>';
+
 			$res = $connect->query("SELECT * FROM products WHERE `subcat` = '$catId' ORDER BY `position` ");
 			$num_prod = $res->num_rows;
 
@@ -57,27 +57,23 @@ include ("blocks/basketWidget.php");
 				$prod = $res->fetch_array(MYSQLI_ASSOC);
 				$productId = $prod['id'];
 				$productTitle = $prod['title'];
+				$productDesc = $prod['desc'];
 				$productYield = $prod['yield'];
 				$productPrice = $prod['price'];
+
+		echo "<div class = \"product\" onclick=\"cart.addToCart(this, '".$productId."','".$productTitle."', '".$productYield."','".$productPrice."')\">";
+
+		echo '<div> <img src = "img/subcat/'.$productId.'.jpg">  	</div>';
+
+		echo '<p>'.$productTitle.'&nbsp;'.$productDesc.'</p>';
+		echo  '<p>Цена: '.$productPrice.'р/<wbr>'.$productYield.'гр.</p>';
+
+		echo '</div>';
+			}		
+
+		echo '</div>	<br><br>';
+	}	
 ?>
-			<div class = "product" onclick="cart.addToCart(this, 
-														'<?php echo "$productId"; ?>', 
-														'<?php echo "$productTitle"; ?>',
-														'<?php echo "$productYield"; ?>',
-														'<?php echo "$productPrice"; ?>')">
-				<div>
-					<img src = "img/subcat/<?=$productId?>.jpg">
-				</div>
-
-				<p><?=$prod['title']?>&nbsp;<?=$prod['desc']?></p>
-				<p>Цена: <?=$prod['price'] ?>р/<wbr><?=$prod['yield']?>гр.</p>
-
-			</div>
-<?			}		?>
-
-		</div>	<br><br>
-<?	}	?>
-
 
 
 		<br><br><br>
