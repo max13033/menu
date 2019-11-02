@@ -504,7 +504,7 @@ box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
 	min-height: 300px;
 	min-width: 200px;
 	box-sizing: border-box;
-	text-align: center;
+	text-align: left;
 	font-weight: bold;
 	font-size: 16pt;
 	border-radius: 5px;
@@ -512,15 +512,17 @@ box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
 	background-color: #fff;
 }
 .product img{
-	max-height: 200px;
-	max-width: 100%;
+	max-height: inherit;    /*200px*/
+	max-width: inherit;	
 	border-radius: 5px;
 	/*margin: 5px;*/
 
 }
 .product div{
-	position: relative;
-	bottom: 0;
+	min-width: 200px;
+	max-width: 100%;
+	min-height: 200px;
+	max-height: 200px;
 }
 .product p{
 	margin: 10px;

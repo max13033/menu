@@ -65,14 +65,12 @@ include ("blocks/basketWidget.php");
 														'<?php echo "$productTitle"; ?>',
 														'<?php echo "$productYield"; ?>',
 														'<?php echo "$productPrice"; ?>')">
-				<img src = "img/subcat/<?=$productId?>.jpg">
 				<div>
-					<p><?=$prod['title']?>&nbsp;<?=$prod['desc']?></p>
-					<p>Цена: <?=$prod['price'] ?>р/<wbr><?=$prod['yield']?>гр.</p>
-				</div>		
+					<img src = "img/subcat/<?=$productId?>.jpg">
+				</div>
 
-
-
+				<p><?=$prod['title']?>&nbsp;<?=$prod['desc']?></p>
+				<p>Цена: <?=$prod['price'] ?>р/<wbr><?=$prod['yield']?>гр.</p>
 
 			</div>
 <?			}		?>
