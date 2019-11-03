@@ -27,7 +27,7 @@ display: none;
 
 .bcontainer
 {
-position: absolute;
+position: fixed;
 width: 800px;
 height: 550px;
 background: #fff;
