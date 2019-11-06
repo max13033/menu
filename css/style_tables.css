@@ -1,0 +1,71 @@
+body{
+  margin: 0;
+}
+.button_t{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  width: 190px;    /*  ширина кнопки  */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 42px;        /* размер шрифта */
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+
+}
+.grid{
+  width: 90%;
+  margin: auto;
+  display: grid;
+  /*background-color: #ddffff;*/
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 2fr;
+  grid-gap: 1vw;
+  grid-template-areas: 
+  "cafe cafe"
+  "robot photo"
+  "choose photo"
+  "tables photo";
+  text-align: center;
+}
+.grid div{
+  /*background-color: #ffdddf;*/
+}
+.cafe{
+  grid-area: cafe;
+  font-size: 32pt;
+  padding-top: 20px;
+  font-weight: bold;
+}
+.robot{
+  grid-area: robot;
+  font-size: 26pt;
+  font-weight: bold;
+}
+.choose{
+  grid-area: choose;
+  font-size: 24pt;
+  padding-top: 20px;
+  font-weight: bold;
+}
+.tables{
+  grid-area: tables;
+}
+.photo{
+  grid-area: photo;
+}
+
+
+
+
+
+
+
+
+
+
+
+

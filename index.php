@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  width: 190px;    /*  ширина кнопки  */
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 42px;        /* размер шрифта */
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 12px;
-
-}
-
-</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <title> Меню </title>
+  <link href="css/style_tables.css"  type="text/css" rel="stylesheet">
 </head>
+
 <body>
 
-<h1><center>Кулинария<center></h1>
-<h2 style="color:blue;"><center>MENU / МЕНЮ <center></h2>
-<h1><center><i>Пожалуйста выберите свободный стол</i><center></h1>
-<br>
-<br>
-<div style="text-align: center;">
-<form>
+<div class = "grid">
 
-	<button name = "table_num" formmethod = "GET" formaction="main.php" value = "1" class="button">1 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="main.php" value = "2" class="button">2 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="main.php" value = "3" class="button">3 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="main.php" value = "4" class="button">4 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="main.php" value = "5" class="button">5 стол</button>
-  <button name = "table_num" formmethod = "GET" formaction="main.php" value = "6" class="button">6 стол</button>  <br>
+  <div class = "cafe">
+      КАФЕ-КЛУБ
+  </div>
+
+  <div class = "robot">
+    РОБОТ-МЕНЮ
+  </div>
+
+  <div class = "choose">
+    ВЫБЕРИТЕ СТОЛ
+  </div>
+
+  <div class = "tables">
+    <form>
+
+      <button name = "table_num" formmethod = "GET" formaction="main.php" value = "1" class="button_t">1 стол</button>
+      <button name = "table_num" formmethod = "GET" formaction="main.php" value = "2" class="button_t">2 стол</button>
+      <button name = "table_num" formmethod = "GET" formaction="main.php" value = "3" class="button_t">3 стол</button><br>
+      <button name = "table_num" formmethod = "GET" formaction="main.php" value = "4" class="button_t">4 стол</button>
+      <button name = "table_num" formmethod = "GET" formaction="main.php" value = "5" class="button_t">5 стол</button>
+      <button name = "table_num" formmethod = "GET" formaction="main.php" value = "6" class="button_t">6 стол</button>  
 
 
-</form>
-</div>
+    </form>
+
+  </div>
+
+  <div class="photo">
+    <img src = "img/robot.jpg" alt = "robot">
+  </div>
+
+</div>  
+
 </body>
 </html>
