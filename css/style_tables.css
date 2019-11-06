@@ -1,6 +1,10 @@
 body{
   margin: 0;
 }
+@font-face{
+    font-family: aksent;
+    src: url(../fonts/durandal_flat.otf);
+}
 .button_t{
   background-color: #4CAF50; /* Green */
   border: none;
@@ -33,6 +37,7 @@ body{
 }
 .grid div{
   /*background-color: #ffdddf;*/
+  font-family: aksent;
 }
 .cafe{
   grid-area: cafe;
