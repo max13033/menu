@@ -1,86 +1,44 @@
-﻿<?php 
-header("Content-Type: text/html; charset=utf-8"); //устанавливаем кодировку страницы
-include ("blocks/bd.php");  //Соединяемся с базой
-error_reporting(E_ALL);
-?>
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- 	<meta name="description" content="<?php echo $myrow['meta_d']; ?> ">
-	<meta name="keywords" content="<?php echo $myrow['meta_k']; ?> "> -->
-	<link rel="icon" href="favicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-	<title> Меню </title>
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  width: 190px;    /*  ширина кнопки  */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 42px;        /* размер шрифта */
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
 
-	<link href="css/style.css"  type="text/css" rel="stylesheet">
-	<link href="css/wicart.css" type="text/css" rel="stylesheet">
-	<link href="css/styleBasket.css"  type="text/css" rel="stylesheet">
+}
 
-	<script type="text/javascript" src="js/jquery.js">   </script>
-	<script type="text/javascript" src="js/wicart.js">   </script>
-	<script type="text/javascript" src="js/main.js"  >   </script>
+</style>
 </head>
-
 <body>
 
-<?php
-	$result = $connect->query("SELECT * FROM subcat ORDER BY position");
-	$num_cat = $result->num_rows;
+<h1><center>Кулинария<center></h1>
+<h2 style="color:blue;"><center>MENU / МЕНЮ <center></h2>
+<h1><center><i>Пожалуйста выберите свободный стол</i><center></h1>
+<br>
+<br>
+<div style="text-align: center;">
+<form>
 
-?>
-	
-	<div id="robofood" class="border" >
-		<h1>Кулинария</h1>
-	</div>
-
-	<div id = "cont">
-<?php 
-include ("blocks/basketWidget.php");  
-
-	for($i=1;$i<=$num_cat; $i++){
-		$myrow = $result->fetch_array(MYSQLI_ASSOC); 
-		
-		$catId = $myrow['id'];
-		$catName = $myrow['title'];
+	<button name = "table_num" formmethod = "GET" formaction="main.php" value = "1" class="button">1 стол</button>
+  <button name = "table_num" formmethod = "GET" formaction="main.php" value = "2" class="button">2 стол</button>
+  <button name = "table_num" formmethod = "GET" formaction="main.php" value = "3" class="button">3 стол</button>
+  <button name = "table_num" formmethod = "GET" formaction="main.php" value = "4" class="button">4 стол</button>
+  <button name = "table_num" formmethod = "GET" formaction="main.php" value = "5" class="button">5 стол</button>
+  <button name = "table_num" formmethod = "GET" formaction="main.php" value = "6" class="button">6 стол</button>  <br>
 
 
-
-
-		echo '<div class = "category">	<div class = "cattitle">'.$catName.'</div>';
-
-			$res = $connect->query("SELECT * FROM products WHERE `subcat` = '$catId' ORDER BY `position` ");
-			$num_prod = $res->num_rows;
-
-			for($j = 1; $j <= $num_prod; $j++){
-				$prod = $res->fetch_array(MYSQLI_ASSOC);
-				$productId = $prod['id'];
-				$productTitle = $prod['title'];
-				$productDesc = $prod['desc'];
-				$productYield = $prod['yield'];
-				$productPrice = $prod['price'];
-
-		echo "<div class = \"product\" onclick=\"cart.addToCart(this, '".$productId."','".$productTitle."', '".$productYield."','".$productPrice."')\">";
-
-		echo '<div> <img src = "img/subcat/'.$productId.'.jpg">  	</div>';
-
-		echo '<p>'.$productTitle.'&nbsp;'.$productDesc.'</p>';
-		echo  '<p>Цена: '.$productPrice.'р/<wbr>'.$productYield.'гр.</p>';
-
-		echo '</div>';
-			}		
-
-		echo '</div>	<br><br>';
-	}	
-?>
-
-
-		<br><br><br>
-	</div>  <!--   cont    -->	
-
+</form>
+</div>
 </body>
-
 </html>
-
-<?php mysqli_free_result($result);?>
